@@ -1,0 +1,15 @@
+# CDE supplies two separate tarballs that must be dropped into:
+#   cdp-spark-connect/code-env/python/python-packages/
+# before building this code-env in DSS.
+#
+# Tarball 1 (required for all auth types):
+#   pyspark-<version>-cde.tar.gz  — version-matched PySpark for your CDE cluster
+#
+# Tarball 2 (required for authType=CDE_SESSION only):
+#   cde-<version>.tar.gz          — CDE Python package (CDESparkConnectSession)
+
+# CDE PySpark tarball (required for all auth types)
+./python-packages/pyspark-3.5.0-cde.tar.gz
+
+# CDE Python package tarball (required for authType=CDE_SESSION only)
+./python-packages/cde-1.20.0.tar.gz
