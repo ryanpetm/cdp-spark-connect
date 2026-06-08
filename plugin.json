@@ -11,7 +11,7 @@
         "label": "Cdp spark connect",
 
         // description: longer string to help end users understand what this plugin does
-        "description": "",
+        "description": "Cloudera Data Platform Spark Connect plugin for Dataiku DSS",
 
         "author": "admin",
 
@@ -26,7 +26,7 @@
         "tags": [], //for example: ["Machine Learning", "NLP"]
 
         // URL where the user can learn more about the plugin
-        "url": "",
+        "url": "https://github.com/ryanpetm/cdp-spark-connect#",
 
         "licenseInfo": "Apache Software License"
     }
