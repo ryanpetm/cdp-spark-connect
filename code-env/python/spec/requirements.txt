@@ -13,3 +13,4 @@
 
 # CDE Python package tarball (required for authType=CDE_SESSION only)
 ../python-packages/cde-1.20.0.tar.gz
+ipykernel
