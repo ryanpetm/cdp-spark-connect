@@ -9,3 +9,5 @@
 .htmlcov
 .DS_Store
 .idea
+/code-env/python/python-packages/cdeconnect.tar.gz
+/code-env/python/python-packages/pyspark-3.5.4.tar.gz
