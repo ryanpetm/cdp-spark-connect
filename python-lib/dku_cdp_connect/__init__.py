@@ -131,12 +131,11 @@ class DkuCDPConnect(SparkLike):
     # -------------------------------------------------------------------------
 
 
-    def _create_session(self, connection_name, connection_info, project_key=None):
+    def _create_session(self, connection_name):
         self._require_pyspark()
         self._require_cde_package()
 
-        connection_params = {}
-        connection_params = resolve_from_dss_secrets(connection_params)
+        connection_params = resolve_from_dss_secrets()
 
         cdp_endpoint      = connection_params.get("cdpEndpoint", "https://console.us-west-1.cdp.cloudera.com")
         vcluster_endpoint = connection_params["vclusterEndpoint"]
