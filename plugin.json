@@ -1,48 +1,26 @@
 {
-    // Plugin identifiers are globally unique and only contain A-Za-z0-9_-
-    "id": "cdp-spark-connect",
-
-    // It is highly recommended to use Semantic Versioning
-    "version": "0.0.1",
-    "connections": [
-        {
-            "id": "CDESparkConnect",
-            "label": "CDE Spark Connect",
-            "pluginClass": "dku_cdp_connect.DkuCDPConnect",
-            "params": [
-                { "name": "host",           "label": "CDE Virtual Cluster Endpoint", "type": "STRING", "mandatory": true },
-                { "name": "cdpEndpoint",    "label": "CDP Control Plane URL",         "type": "STRING", "mandatory": false },
-                { "name": "cdpAccessKeyId", "label": "CDP Access Key ID",             "type": "STRING", "mandatory": true },
-                { "name": "cdpPrivateKey",  "label": "CDP Private Key",               "type": "PASSWORD","mandatory": true },
-                { "name": "sessionName",    "label": "Session Name (optional)",       "type": "STRING", "mandatory": false },
-                { "name": "db",             "label": "Default Database",              "type": "STRING", "mandatory": false },
-                { "name": "defaultCatalog", "label": "Default Catalog",               "type": "STRING", "mandatory": false }
-        ]
-        }
-    ],
-    // Meta data for display purposes:
-    "meta": {
-        // label: name of the plugin as displayed, should be short
-        "label": "Cdp spark connect",
-
-        // description: longer string to help end users understand what this plugin does
-        "description": "Cloudera Data Platform Spark Connect plugin for Dataiku DSS",
-
-        "author": "admin",
-
-        // icon: must be one of the FontAwesome 5.15.4 icons, complete list here at https://fontawesome.com/v5/docs/
-        "icon": "fas fa-puzzle-piece",
-
-        // recipesCategory: optional, can be one of 'visual', 'code', 'genai' or 'other'
-        // defines the category of the plugin in the right panel
-        "recipesCategory": "",
-
-        // List of tags for filtering the list of plugins
-        "tags": [], //for example: ["Machine Learning", "NLP"]
-
-        // URL where the user can learn more about the plugin
-        "url": "https://github.com/ryanpetm/cdp-spark-connect#",
-
-        "licenseInfo": "Apache Software License"
+  "id": "cdp-spark-connect",
+  "version": "1.0.0",
+  "meta": {
+    "label": "CDP Spark Connect"
+  },
+  "connections": [
+    {
+      "id": "CDESparkConnect",
+      "meta": {
+        "label": "CDE Spark Connect",
+        "description": "Spark Connect to Cloudera Data Engineering (CDE)"
+      },
+      "pluginClass": "dku_cdp_connect.DkuCDPConnect",
+      "params": [
+        { "name": "host",           "label": "CDE Virtual Cluster Endpoint", "type": "STRING",   "mandatory": true },
+        { "name": "cdpEndpoint",    "label": "CDP Control Plane URL",         "type": "STRING",   "mandatory": false },
+        { "name": "cdpAccessKeyId", "label": "CDP Access Key ID",             "type": "STRING",   "mandatory": true },
+        { "name": "cdpPrivateKey",  "label": "CDP Private Key",               "type": "PASSWORD", "mandatory": true },
+        { "name": "sessionName",    "label": "Session Name (optional)",       "type": "STRING",   "mandatory": false },
+        { "name": "db",             "label": "Default Database",              "type": "STRING",   "mandatory": false },
+        { "name": "defaultCatalog", "label": "Default Catalog",               "type": "STRING",   "mandatory": false }
+      ]
     }
+  ]
 }
