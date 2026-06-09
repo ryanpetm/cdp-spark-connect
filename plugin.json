@@ -4,7 +4,22 @@
 
     // It is highly recommended to use Semantic Versioning
     "version": "0.0.1",
-
+    "connections": [
+        {
+            "id": "CDESparkConnect",
+            "label": "CDE Spark Connect",
+            "pluginClass": "dku_cdp_connect.DkuCDPConnect",
+            "params": [
+                { "name": "host",           "label": "CDE Virtual Cluster Endpoint", "type": "STRING", "mandatory": true },
+                { "name": "cdpEndpoint",    "label": "CDP Control Plane URL",         "type": "STRING", "mandatory": false },
+                { "name": "cdpAccessKeyId", "label": "CDP Access Key ID",             "type": "STRING", "mandatory": true },
+                { "name": "cdpPrivateKey",  "label": "CDP Private Key",               "type": "PASSWORD","mandatory": true },
+                { "name": "sessionName",    "label": "Session Name (optional)",       "type": "STRING", "mandatory": false },
+                { "name": "db",             "label": "Default Database",              "type": "STRING", "mandatory": false },
+                { "name": "defaultCatalog", "label": "Default Catalog",               "type": "STRING", "mandatory": false }
+        ]
+        }
+    ],
     // Meta data for display purposes:
     "meta": {
         // label: name of the plugin as displayed, should be short

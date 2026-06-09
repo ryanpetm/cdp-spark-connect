@@ -6,6 +6,7 @@ import tempfile
 import dataiku
 from dataiku.base.spark_like import SparkLike
 from dataiku.base.sql_dialect import SparkLikeDialect
+from dku_cdp_connect.utils import resolve_from_dss_secrets
 
 # PySpark — CDE-provided, version-matched to the cluster's Spark runtime.
 # Install in code-env: pip install /path/to/pyspark-<cde-version>.tar.gz
@@ -129,11 +130,15 @@ class DkuCDPConnect(SparkLike):
     # Session factory
     # -------------------------------------------------------------------------
 
+
     def _create_session(self, connection_name, connection_info, project_key=None):
         self._require_pyspark()
         self._require_cde_package()
 
         connection_params = connection_info["resolvedParams"]
+        #  fill missing params from DSS user secrets before use
+        connection_params = resolve_from_dss_secrets(connection_params)
+
         cdp_endpoint      = connection_params.get("cdpEndpoint", "https://console.us-west-1.cdp.cloudera.com")
         vcluster_endpoint = connection_params["host"]
         key_id            = connection_params["cdpAccessKeyId"]
