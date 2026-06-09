@@ -135,15 +135,14 @@ class DkuCDPConnect(SparkLike):
         self._require_pyspark()
         self._require_cde_package()
 
-        connection_params = connection_info["resolvedParams"]
-        #  fill missing params from DSS user secrets before use
+        connection_params = {}
         connection_params = resolve_from_dss_secrets(connection_params)
 
         cdp_endpoint      = connection_params.get("cdpEndpoint", "https://console.us-west-1.cdp.cloudera.com")
-        vcluster_endpoint = connection_params["host"]
+        vcluster_endpoint = connection_params["vclusterEndpoint"]
         key_id            = connection_params["cdpAccessKeyId"]
         private_key       = connection_params["cdpPrivateKey"]
-        session_name      = connection_params.get("sessionName") or "dss-{}".format(connection_name)
+        session_name      = connection_name
 
         # Write temp CDE config files from DSS connection params.
         # Both files are deleted immediately after CDESparkConnectSession.get()

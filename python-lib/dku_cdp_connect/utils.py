@@ -7,7 +7,7 @@ _SECRET_KEY_MAP = {
     "CDP Private Key":          "cdpPrivateKey",
 }
 
-_REQUIRED_PARAMS = ("vclusterEndpoint", "cdpAccessKeyId", "cdpPrivateKey")
+_REQUIRED_PARAMS = ("vclusterEndpoint", "cdpAccessKeyId", "cdpPrivateKey", "cdpEndpoint")
 
 
 def resolve_from_dss_secrets():
@@ -19,6 +19,7 @@ def resolve_from_dss_secrets():
         - Virtual Cluster Endpoint
         - CDP Access Key ID
         - CDP Private Key
+        - CDP Control Plane URL
     Optional:
         - CDP Control Plane URL  (defaults to https://console.us-west-1.cdp.cloudera.com)
     """
